@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Vinyl Record Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="cart.html" id="cart-icon">🛒 Cart (0)</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h2>Your Cart</h2>
+        <div id="cart-items">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <p id="cart-total">Total: $0.00</p>
+        <button id="checkout-btn">Proceed to Checkout</button>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Vinyl Record Store. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Load and display cart immediately
+        document.addEventListener('DOMContentLoaded', function() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+            const cartIcon = document.getElementById('cart-icon');
+
+            // Update cart icon count
+            cartIcon.textContent = `🛒 Cart (${cart.length})`;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
+            } else {
+                let total = 0;
+                cartItemsContainer.innerHTML = cart.map(item => `
+                    <div class="cart-item">
+                        <h3>${item.name}</h3>
+                        <p>$${item.price.toFixed(2)}</p>
+                        <button class="remove-item" data-name="${item.name}">Remove</button>
+                    </div>
+                `).join('');
+                
+                total = cart.reduce((sum, item) => sum + item.price, 0);
+                cartTotal.textContent = `Total: $${total.toFixed(2)}`;
+                
+                // Add event listeners to remove buttons
+                document.querySelectorAll('.remove-item').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const itemName = this.getAttribute('data-name');
+                        const updatedCart = cart.filter(item => item.name !== itemName);
+                        localStorage.setItem('cart', JSON.stringify(updatedCart));
+                        
+                        // Refresh the display
+                        location.reload();
+                    });
+                });
+            }
+
+            // Checkout button handler
+            document.getElementById('checkout-btn').addEventListener('click', function() {
+                if (cart.length === 0) {
+                    alert('Your cart is empty!');
+                } else {
+                    alert('Proceeding to checkout!'); // Replace with actual checkout logic
+                }
+            });
+        });
+    </script>
+</body>
+</html>

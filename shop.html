@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Vinyl Record Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1>Vinyl Record Store</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="contact.html">Contact</a>
+                <a href="cart.html" id="cart-icon">🛒 Cart (0)</a>
+                <a href="login.html">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h2>Browse Our Collection</h2>
+        <div class="product-list">
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200" alt="Jazz Collection">
+                <h3>Jazz Classics</h3>
+                <p>Timeless jazz recordings</p>
+                <p>$29.99</p>
+                <button class="add-to-cart" onclick="addToCart('Jazz Classics', 29.99)">Add to cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200" alt="Rock Collection">
+                <h3>Rock Legends</h3>
+                <p>Greatest rock hits</p>
+                <p>$34.99</p>
+                <button class="add-to-cart" onclick="addToCart('Rock Legends', 34.99)">Add to cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200" alt="Hip Hop Collection">
+                <h3>Hip Hop Essentials</h3>
+                <p>Classic hip hop albums</p>
+                <p>$27.99</p>
+                <button class="add-to-cart" onclick="addToCart('Hip Hop Essentials', 27.99)">Add to cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200" alt="Electronic Collection">
+                <h3>Electronic Beats</h3>
+                <p>Best electronic music</p>
+                <p>$25.99</p>
+                <button class="add-to-cart" onclick="addToCart('Electronic Beats', 25.99)">Add to cart</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Vinyl Record Store. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

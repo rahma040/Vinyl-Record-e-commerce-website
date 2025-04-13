@@ -1,0 +1,399 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f4e3; /* Soft beige background */
+    color: #5a4a42; /* Rich brown text for readability */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: linear-gradient(135deg, #a1887f, #8d6e63); /* Warm brown gradient */
+    color: white;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #d7ccc8; /* Light warm brown for hover */
+}
+
+h2 {
+    font-family: 'Playfair Display', serif; /* Elegant vintage font */
+    font-size: 36px;
+    text-align: center;
+    color: #6d4c41; /* Deep brown */
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 8px rgba(109, 76, 65, 0.3); /* Soft glow */
+    background: linear-gradient(135deg, #6d4c41, #8d6e63);
+    
+    -webkit-text-fill-color: transparent;
+    margin-top: 20px;
+}
+
+.product-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-card {
+    background: rgb(211, 198, 182);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 200px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #d7ccc8; /* Light warm brown border */
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(109, 76, 65, 0.2); /* Deep brown shadow */
+    border-color: #6d4c41; /* Deep brown border on hover */
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #6d4c41; /* Deep brown for titles */
+}
+
+.product-card p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666; /* Muted gray for descriptions */
+}
+
+.product-card button {
+    background: linear-gradient(135deg, #6d4c41, #8d6e63); /* Deep brown gradient */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: transform 0.2s;
+}
+
+.product-card button:hover {
+    background: linear-gradient(135deg, #8d6e63, #6d4c41); /* Reversed gradient on hover */
+    transform: scale(1.02);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: linear-gradient(135deg, #6d4c41, #8d6e63); /* Deep brown gradient */
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    font-size: 14px;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* Login Page Styles */
+#login-page {
+    font-family: 'Poppins', sans-serif; /* Match your body font */
+    background-image: url('images/image3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#login-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow like product cards */
+    width: 350px;
+    text-align: center;
+}
+
+#login-title {
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-family: 'Playfair Display', serif; /* Match your h2 font */
+    color: #4a3f35; /* Soft purple from index.html */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 8px rgba(106, 90, 205, 0.3); /* Soft glow */
+}
+
+#username-label,
+#password-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #4a3f35;
+    text-align: left; /* Align labels to the left */
+}
+
+#username,
+#password {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #d3c9bf; /* Light border like product cards */
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f9f9f9; /* Light background for inputs */
+}
+
+#username:focus,
+#password:focus {
+    border-color: #8b735b; /* Soft purple border on focus */
+    outline: none;
+}
+
+#login-button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #8b735b, #a8917a); /* Soft purple gradient */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s,  0.3s;
+}
+
+#login-button:hover {
+    background: linear-gradient(135deg, #6b5a4a, #8b735b); /* Reversed gradient on hover */
+    transform: scale(1.02); /* Slight scale effect */
+}
+
+#signup-link {
+    margin-top: 15px;
+    font-size: 14px;
+    color:  #4a3f35; /* Muted gray like product descriptions */
+}
+
+#signup-link a {
+    color: #8b735b; /* Soft purple for links */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#signup-link a:hover {
+    text-decoration: underline;
+}
+/* Cart Page Styles */
+#cart-items {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item {
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+#cart-total {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right;
+    margin: 20px;
+    color: #6d4c41; /* Deep brown */
+}
+/* Add these styles to your existing style.css */
+
+/* Contact Page Styles */
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.contact-info, .contact-form {
+    background: rgb(211, 198, 182);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    margin-bottom: 20px;
+}
+
+.contact-info h3, .contact-form h3 {
+    color: #6d4c41;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.contact-info p {
+    margin: 10px 0;
+    color: #5a4a42;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #5a4a42;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d7ccc8;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.contact-form button {
+    background: linear-gradient(135deg, #6d4c41, #8d6e63);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s,  0.3s;
+}
+
+.contact-form button:hover {
+    background: linear-gradient(135deg, #8d6e63, #6d4c41);
+    transform: scale(1.02);
+}
+
+/* Cart Item Styles */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: rgb(211, 198, 182);
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item h3 {
+    color: #6d4c41;
+    margin: 0;
+    flex: 2;
+}
+
+.cart-item p {
+    color: #5a4a42;
+    margin: 0;
+    flex: 1;
+    text-align: right;
+}
+
+.cart-item button {
+    background: #8d6e63;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 15px;
+    transition:  0.3s;
+}
+
+.cart-item button:hover {
+    background: #6d4c41;
+}
+
+#cart-total {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: right;
+    margin: 20px;
+    color: #6d4c41;
+    padding: 15px;
+    background: rgb(211, 198, 182);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .contact-info, .contact-form {
+        width: 100%;
+    }
+    
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .cart-item button {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
